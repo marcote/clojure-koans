@@ -1,5 +1,5 @@
 (ns koans.08-higher-order-functions
-  (:require [koan-engine.core :refer :all]))
+  (:require [koan-engine.core :refer :all ]))
 
 (meditations
   "The map function relates a sequence to another"
@@ -31,5 +31,5 @@
 
   "Numbers are not the only things one can reduce"
   (= "longest" (reduce (fn [a b]
-                         (if (< a b) b a))
-                       ["which" "word" "is" "longest"])))
+                         (if (> (count a) (count b)) a b))
+                         ["which" "word" "is" "longest"])))
